@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\SessionsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,4 +16,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
 	return view('welcome');
+});
+
+Route::controller(SessionsController::class)->group(function() {
+	Route::get('/login', 'create')->middleware(('guest'))->name('sessions.create');
 });
