@@ -16,7 +16,7 @@ use App\Http\Controllers\SessionsController;
 
 Route::get('/', function () {
 	return view('welcome');
-});
+})->name('home');
 
 Route::view('/login', 'sessions.create')->middleware('guest')->name('sessions.create');
 Route::controller(SessionsController::class)->group(function() {

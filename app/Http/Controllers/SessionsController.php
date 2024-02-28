@@ -6,10 +6,11 @@ use Illuminate\Http\Request;
 use Illuminate\View\View;
 use Illuminate\Validation\ValidationException;
 use App\Http\Requests\StoreSessionsRequest;
+use Illuminate\Http\RedirectResponse;
 
 class SessionsController extends Controller
 {
-    public function store(StoreSessionsRequest $request)
+    public function store(StoreSessionsRequest $request): RedirectResponse
     {
         if(!auth()->attempt($request->validated())) {
             throw ValidationException::withMessages([
@@ -17,10 +18,10 @@ class SessionsController extends Controller
                 'password' => __('auth.failed'),
             ]);
         }
-        return redirect('/');
+        return redirect()->route('home');
     }
 
-    public function destroy()
+    public function destroy(): RedirectResponse
     {
         auth()->logout();
         return redirect()->route('sessions.create');
