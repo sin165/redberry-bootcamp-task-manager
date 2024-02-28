@@ -14,8 +14,7 @@ class SessionsController extends Controller
     {
         if(!auth()->attempt($request->validated())) {
             throw ValidationException::withMessages([
-                'email' => __('auth.failed'),
-                'password' => __('auth.failed'),
+                'password' => __('auth.password'),
             ]);
         }
         return redirect()->route('home');
