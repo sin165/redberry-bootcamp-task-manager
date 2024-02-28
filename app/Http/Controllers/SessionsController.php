@@ -7,8 +7,4 @@ use Illuminate\View\View;
 
 class SessionsController extends Controller
 {
-    public function create(): View
-    {
-        return view('sessions.create');
-    }
 }

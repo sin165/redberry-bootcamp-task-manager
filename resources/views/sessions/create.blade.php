@@ -2,7 +2,7 @@
     <div class="h-dvh p-10">
         <div class="h-full flex">
             <div class="h-full w-1/2 overflow-hidden rounded-l-5xl ">
-                <img src="/images/default_cover.png" alt="cover" class="h-full w-full overflow-hidden object-cover">
+                <img src="{{ asset('images/default_cover.png') }}" alt="cover" class="h-full w-full overflow-hidden object-cover">
             </div>
             <main class="w-1/2 flex justify-center items-center relative">
                 <section class="w-116 h-92.5 relative">

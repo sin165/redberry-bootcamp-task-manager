@@ -18,6 +18,4 @@ Route::get('/', function () {
 	return view('welcome');
 });
 
-Route::controller(SessionsController::class)->group(function() {
-	Route::get('/login', 'create')->middleware(('guest'))->name('sessions.create');
-});
+Route::view('/login', 'sessions.create')->middleware('guest')->name('sessions.create');
