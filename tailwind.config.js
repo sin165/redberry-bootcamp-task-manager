@@ -22,6 +22,7 @@ export default {
       colors: {
         'blue-primary': '#499AF9',
         'blue-darker': '#3386E7',
+        'red-error': '#E91818',
         'gray20': '#F6F8FA',
         'gray50': '#959DA5',
         'gray60': '#6A737D',
