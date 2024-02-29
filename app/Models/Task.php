@@ -14,8 +14,8 @@ class Task extends Model
 
     public $translatable = ['name', 'description'];
 
-    public function owner(): BelongsTo
+    public function user(): BelongsTo
     {
-        return $this->belongsTo(User::class, 'user_id');
+        return $this->belongsTo(User::class);
     }
 }

@@ -21,11 +21,11 @@ class TaskFactory extends Factory
             'user_id' => User::factory(),
             'name' => [
                 'en' => fake()->sentence(),
-                'ka' => 'ლორემ იპსუმ უნიფორმა ფიჭვის იწყო, სოფიოც ართლაცდა.',
+                'ka' => fake()->sentence(),
             ],
             'description' => [
                 'en' => fake()->sentence(20),
-                'ka' => 'ლორემ იპსუმ დაგიბრუნებ უყრისო შევიწროვებული შეფის მისგან ყვირილს ლოკოკინებისა. ფეხთით ინციდენტი მაგას დამმშვიდდი კრიტიკის ვიღა ილაპარაკებდი ასეთს.',
+                'ka' => fake()->sentence(20),
             ],
             'due_date' => fake()->dateTimeBetween('-5days', '+10 days'),
         ];
