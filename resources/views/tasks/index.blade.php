@@ -21,4 +21,5 @@
     <div class="w-full pr-20">
         <x-table :tasks="$tasks" />
     </div>
+    {{ $tasks->onEachSide(1)->links() }}
 </x-frame>
