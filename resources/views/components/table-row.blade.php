@@ -1,19 +1,21 @@
+@props(['task'])
+
 <tr class="w-full">
     <td class="p-6 w-1/4 truncate">
         <p class="w-24">
-            Call Jim and ask about the quote
+            {{ $task->name }}
         </p>
     </td>
     <td class="p-6 w-3/10 truncate">
         <p class="w-24">
-            Systematic characterization and documentati
+            {{ $task->description }}
         </p>
     </td>
     <td class="p-6 w-12/100">
-        23/06/2013
+        {{ $task->created_at->format('d/m/Y') }}
     </td>
     <td class="p-6 w-12/100">
-        23/06/2013
+        {{ $task->due_date->format('d/m/Y') }}
     </td>
     <td class="p-6 w-21/100">
         <div class="flex gap-7 text-gray90">

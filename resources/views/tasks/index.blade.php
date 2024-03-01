@@ -1,3 +1,5 @@
+@props(['tasks'])
+
 <x-frame>
     <div class="flex justify-between items-end mb-6 h-36 pl-6 pr-10">
         <h1 class="text-gray90 font-bold text-3xl leading-4">
@@ -17,6 +19,6 @@
         </div>
     </div>
     <div class="w-full pr-20">
-        <x-table />
+        <x-table :tasks="$tasks" />
     </div>
 </x-frame>

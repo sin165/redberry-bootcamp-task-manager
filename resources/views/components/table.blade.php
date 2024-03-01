@@ -1,3 +1,5 @@
+@props(['tasks'])
+
 <table class="table w-full border-collapse border-spacing-x-6 border-spacing-y-8">
     <thead class="w-full text-lg leading-4">
         <tr class="w-full border-b border-gray10">
@@ -19,6 +21,8 @@
         </tr>
     </thead>
     <tbody class="w-full text-gray60 leading-4">
-        <x-table-row />
+        @foreach ($tasks as $task)
+            <x-table-row :task="$task" />
+        @endforeach
     </tbody>
 </table>

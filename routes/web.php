@@ -16,7 +16,7 @@ use App\Http\Controllers\TaskController;
 */
 
 Route::controller(TaskController::class)->group(function() {
-	Route::get('/', 'index')->name('home');
+	Route::get('/', 'index')->middleware('auth')->name('home');
 });
 
 Route::view('/login', 'sessions.create')->middleware('guest')->name('sessions.create');
