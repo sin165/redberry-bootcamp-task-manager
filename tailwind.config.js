@@ -7,9 +7,15 @@ export default {
   theme: {
     extend: {
       spacing: {
+        '1.5': '0.375rem',
+        '2.5': '0.625rem',
+        '3.5': '0.875rem',
         '17.5': '4.375rem',
         '92.5': '23.125rem',
         '116': '29rem',
+        '3/10': '30%',
+        '12/100': '12%',
+        '21/100': '21%',
       },
       fontFamily: {
         'helvetica': ['Helvetica', 'sans-serif'],
@@ -21,8 +27,10 @@ export default {
       },
       colors: {
         'blue-primary': '#499AF9',
+        'blue-transparent': '#499AF914',
         'blue-darker': '#3386E7',
         'red-error': '#E91818',
+        'gray10': '#E0E3E7',
         'gray20': '#F6F8FA',
         'gray50': '#959DA5',
         'gray60': '#6A737D',

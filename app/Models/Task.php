@@ -14,6 +14,12 @@ class Task extends Model
 
     public $translatable = ['name', 'description'];
 
+    protected $guarded = [];
+
+    protected $casts = [
+		'due_date' => 'datetime',
+	];
+
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);

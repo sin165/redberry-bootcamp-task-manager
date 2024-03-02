@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SessionsController;
+use App\Http\Controllers\TaskController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,9 +15,9 @@ use App\Http\Controllers\SessionsController;
 |
 */
 
-Route::get('/', function () {
-	return view('welcome');
-})->name('home');
+Route::controller(TaskController::class)->group(function() {
+	Route::get('/', 'index')->middleware('auth')->name('home');
+});
 
 Route::view('/login', 'sessions.create')->middleware('guest')->name('sessions.create');
 Route::controller(SessionsController::class)->group(function() {
