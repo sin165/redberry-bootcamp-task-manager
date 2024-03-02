@@ -6,8 +6,8 @@
             </div>
             <main class="w-1/2 flex justify-center items-center relative">
                 <section class="w-116 h-92.5 relative">
-                    <h1 class="text-4xl leading-4 text-gray90">Welcome Back!</h1>
-                    <p class="leading-4 mt-4 text-gray60 ">Please enter your details</p>
+                    <h1 class="text-4xl leading-4 text-gray-720">Welcome Back!</h1>
+                    <p class="leading-4 mt-4 text-gray-510 ">Please enter your details</p>
                     <div class="absolute right-4 top-[-0.35rem]">
                         <x-svg.smiley />
                     </div>
@@ -19,8 +19,8 @@
                     </form>
                 </section>
                 <section class="absolute bottom-0">
-                    <button class="h-10 px-4 py-3 text-sm leading-4 rounded-0.5xl text-gray90 bg-gray20" disabled>English</button>
-                    <button class="h-10 px-4 py-3 text-sm leading-4 text-gray60 ">ქართული</button>
+                    <button class="h-10 px-4 py-3 text-sm leading-4 rounded-0.5xl text-gray-720 bg-gray-70" disabled>English</button>
+                    <button class="h-10 px-4 py-3 text-sm leading-4 text-gray-510 ">ქართული</button>
                 </section>
             </main>
         </div>

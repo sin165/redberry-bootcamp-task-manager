@@ -2,7 +2,7 @@
 
 <x-frame>
     <div class="flex justify-between items-end mb-6 h-36 pl-6 pr-10">
-        <h1 class="text-gray90 font-bold text-3xl leading-4">
+        <h1 class="text-gray-720 font-bold text-3xl leading-4">
             {{ __('tasks.your_tasks') }}
         </h1>
         <div class="flex gap-4">

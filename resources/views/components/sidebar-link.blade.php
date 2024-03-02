@@ -4,7 +4,7 @@
     <div class="size-8 flex justify-center items-center">
         {{ $svg }}
     </div>
-    <span class="text-lg leading-4 text-gray90">
+    <span class="text-lg leading-4 text-gray-720">
         {{ $slot }}
     </span>
 </a>

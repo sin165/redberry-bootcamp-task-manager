@@ -18,7 +18,7 @@
         {{ $task->due_date->format('d/m/Y') }}
     </td>
     <td class="p-6 w-21/100">
-        <div class="flex gap-7 text-gray90">
+        <div class="flex gap-7 text-gray-720">
             <a href="#" class="underline">{{ __('tasks.delete') }}</a>
             <a href="#" class="underline">{{ __('tasks.edit') }}</a>
             <a href="#" class="underline">{{ __('tasks.show') }}</a>
