@@ -21,6 +21,6 @@ class SessionsController extends Controller
 	public function destroy(): RedirectResponse
 	{
 		auth()->logout();
-		return redirect()->route('sessions.create');
+		return redirect()->route('login');
 	}
 }
