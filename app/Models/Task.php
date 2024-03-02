@@ -9,19 +9,20 @@ use Spatie\Translatable\HasTranslations;
 
 class Task extends Model
 {
-    use HasFactory;
-    use HasTranslations;
+	use HasFactory;
 
-    public $translatable = ['name', 'description'];
+	use HasTranslations;
 
-    protected $guarded = [];
+	public $translatable = ['name', 'description'];
 
-    protected $casts = [
+	protected $guarded = [];
+
+	protected $casts = [
 		'due_date' => 'datetime',
 	];
 
-    public function user(): BelongsTo
-    {
-        return $this->belongsTo(User::class);
-    }
+	public function user(): BelongsTo
+	{
+		return $this->belongsTo(User::class);
+	}
 }
