@@ -20,6 +20,9 @@ export default {
       fontFamily: {
         'helvetica': ['Helvetica', 'sans-serif'],
       },
+      fontSize: {
+        '3.5xl': '2rem',
+      },
       borderRadius: {
         '0.5xl': '0.625rem',
         '1.5xl': '0.875rem',
