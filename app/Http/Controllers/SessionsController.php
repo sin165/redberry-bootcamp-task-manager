@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Validation\ValidationException;
 use App\Http\Requests\StoreSessionsRequest;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\Request;
 
 class SessionsController extends Controller
 {
@@ -18,9 +19,10 @@ class SessionsController extends Controller
 		return redirect()->route('home');
 	}
 
-	public function destroy(): RedirectResponse
+	public function destroy(Request $request): RedirectResponse
 	{
 		auth()->logout();
+		$request->session()->invalidate();
 		return redirect()->route('login');
 	}
 }

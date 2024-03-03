@@ -19,8 +19,7 @@
                     </form>
                 </section>
                 <section class="absolute bottom-0">
-                    <button class="h-10 px-4 py-3 text-sm leading-4 rounded-0.5xl text-gray-720 bg-gray-70" disabled>English</button>
-                    <button class="h-10 px-4 py-3 text-sm leading-4 text-gray-510 ">ქართული</button>
+                    <x-language />
                 </section>
             </main>
         </div>
