@@ -2,7 +2,7 @@
 
 <table class="table w-full border-collapse border-spacing-x-6 border-spacing-y-8">
     <thead class="w-full text-lg leading-4">
-        <tr class="w-full border-b border-gray10">
+        <tr class="w-full border-b border-gray-220">
             <x-table-header class="w-1/4">{{ __('tasks.task_name') }}</x-table-header>
             <x-table-header class="w-3/10">{{ __('tasks.description') }}</x-table-header>
             <x-table-header class="w-12/100">
@@ -20,7 +20,7 @@
             <x-table-header class="w-21/100">{{ __('tasks.actions') }}</x-table-header>
         </tr>
     </thead>
-    <tbody class="w-full text-gray60 leading-4">
+    <tbody class="w-full text-gray-510 leading-4">
         @foreach ($tasks as $task)
             <x-table-row :task="$task" />
         @endforeach

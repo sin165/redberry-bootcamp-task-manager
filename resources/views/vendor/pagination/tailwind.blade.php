@@ -5,7 +5,7 @@
             {{-- "Three Dots" Separator --}}
             @if (is_string($element))
                 <span aria-disabled="true">
-                    <span class="text-gray60 px-3.5 py-2.5 relative inline-flex items-center text-sm cursor-default leading-4">{{ $element }}</span>
+                    <span class="text-gray-510 px-3.5 py-2.5 relative inline-flex items-center text-sm cursor-default leading-4">{{ $element }}</span>
                 </span>
             @endif
             {{-- Array Of Links --}}
@@ -16,7 +16,7 @@
                             <span class="bg-blue-transparent text-blue-primary px-3.5 py-2.5 rounded-0.5xl relative inline-flex items-center text-sm cursor-default leading-4">{{ $page }}</span>
                         </span>
                     @else
-                        <a href="{{ $url }}" class="text-gray60 px-3.5 py-2.5 relative inline-flex items-center text-sm leading-4" aria-label="{{ __('Go to page :page', ['page' => $page]) }}">
+                        <a href="{{ $url }}" class="text-gray-510 px-3.5 py-2.5 relative inline-flex items-center text-sm leading-4" aria-label="{{ __('Go to page :page', ['page' => $page]) }}">
                             {{ $page }}
                         </a>
                     @endif

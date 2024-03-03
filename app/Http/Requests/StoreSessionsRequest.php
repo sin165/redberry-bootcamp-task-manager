@@ -6,11 +6,11 @@ use Illuminate\Foundation\Http\FormRequest;
 
 class StoreSessionsRequest extends FormRequest
 {
-    public function rules(): array
-    {
-        return [
-            'email' => 'required|email|exists:users,email',
-            'password' => 'required|min:4',
-        ];
-    }
+	public function rules(): array
+	{
+		return [
+			'email'    => 'required|email|exists:users,email',
+			'password' => 'required|min:4',
+		];
+	}
 }

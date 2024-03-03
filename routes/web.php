@@ -15,12 +15,12 @@ use App\Http\Controllers\TaskController;
 |
 */
 
-Route::controller(TaskController::class)->group(function() {
+Route::controller(TaskController::class)->group(function () {
 	Route::get('/', 'index')->middleware('auth')->name('home');
 });
 
-Route::view('/login', 'sessions.create')->middleware('guest')->name('sessions.create');
-Route::controller(SessionsController::class)->group(function() {
+Route::view('/login', 'login')->middleware('guest')->name('login');
+Route::controller(SessionsController::class)->group(function () {
 	Route::post('/login', 'store')->middleware('guest')->name('sessions.store');
 	Route::post('/logout', 'destroy')->middleware('auth')->name('sessions.destroy');
 });
