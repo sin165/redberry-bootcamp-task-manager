@@ -15,11 +15,7 @@ class TaskController extends Controller
 			$tasks->where('due_date', '<', now());
 		}
 
-		if ($request->has('sort_by')) {
-			$tasks->orderByField($request->sort_by);
-		} else {
-			$tasks->latest();
-		}
+		$tasks->orderByField($request->sort_by ?? 'created_at_desc');
 
 		return view('tasks.index', [
 			'tasks' => $tasks->paginate(8)->withQueryString(),
