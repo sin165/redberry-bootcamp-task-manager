@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
 use App\Models\Task;
 
@@ -28,5 +29,11 @@ class TaskController extends Controller
 		return view('tasks.show', [
 			'task' => $task,
 		]);
+	}
+
+	public function destroy(Task $task): RedirectResponse
+	{
+		$task->delete();
+		return back();
 	}
 }
