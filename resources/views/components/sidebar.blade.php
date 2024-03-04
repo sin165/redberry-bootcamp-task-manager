@@ -6,7 +6,7 @@
                 <x-slot name="svg"><x-svg.my-tasks /></x-slot>
                 {{ __('sidebar.my_tasks') }}
             </x-sidebar-link>
-            <x-sidebar-link href="#">
+            <x-sidebar-link href="{{ route('home', ['due_tasks_only' => 1]) }}">
                 <x-slot name="svg"><x-svg.due-tasks /></x-slot>
                 {{ __('sidebar.due_tasks') }}
             </x-sidebar-link>
