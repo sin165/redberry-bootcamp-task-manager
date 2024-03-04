@@ -14,7 +14,7 @@
     <td class="p-6 w-12/100">
         {{ $task->created_at->format('d/m/Y') }}
     </td>
-    <td class="p-6 w-12/100">
+    <td class="p-6 w-12/100 {{ $task->due_date < now() ? 'text-red-error' : '' }}">
         {{ $task->due_date->format('d/m/Y') }}
     </td>
     <td class="p-6 w-21/100">
