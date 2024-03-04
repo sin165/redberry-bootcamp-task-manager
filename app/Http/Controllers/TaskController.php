@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
 use App\Models\Task;
+use App\Http\Requests\Task\StoreTaskRequest;
 
 class TaskController extends Controller
 {
@@ -29,6 +31,24 @@ class TaskController extends Controller
 		return view('tasks.show', [
 			'task' => $task,
 		]);
+	}
+
+	public function store(StoreTaskRequest $request): RedirectResponse
+	{
+		$attributes = $request->validated();
+		Task::create([
+			'user_id' => auth()->id(),
+			'name'    => [
+				'en' => $attributes['name_en'],
+				'ka' => $attributes['name_ka'],
+			],
+			'description' => [
+				'en' => $attributes['description_en'],
+				'ka' => $attributes['description_ka'],
+			],
+			'due_date' => Carbon::createFromFormat('d/m/y', $attributes['due_date'])->startOfDay(),
+		]);
+		return redirect()->route('home');
 	}
 
 	public function destroy(Task $task): RedirectResponse
