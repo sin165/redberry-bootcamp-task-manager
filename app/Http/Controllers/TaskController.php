@@ -36,4 +36,10 @@ class TaskController extends Controller
 		$task->delete();
 		return back();
 	}
+
+	public function destroyOld(): RedirectResponse
+	{
+		request()->user()->tasks()->where('due_date', '<', now())->delete();
+		return back();
+	}
 }
