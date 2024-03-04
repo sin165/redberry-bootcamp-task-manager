@@ -19,9 +19,13 @@
     </td>
     <td class="p-6 w-21/100">
         <div class="flex gap-7 text-gray-720">
-            <a href="#" class="underline">{{ __('tasks.delete') }}</a>
+            <form method="POST" action="{{ route('tasks.destroy', ['task' => $task->id]) }}"> 
+                @csrf
+                @method('DELETE')
+                <button class="underline">{{ __('tasks.delete') }}</button>
+            </form>
             <a href="#" class="underline">{{ __('tasks.edit') }}</a>
-            <a href="#" class="underline">{{ __('tasks.show') }}</a>
+            <a href="{{ route('tasks.show', ['task' => $task->id]) }}" class="underline">{{ __('tasks.show') }}</a>
         </div>
     </td>
 </tr>

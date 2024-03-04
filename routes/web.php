@@ -5,19 +5,11 @@ use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\SessionsController;
 use App\Http\Controllers\TaskController;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
-
 Route::controller(TaskController::class)->group(function () {
 	Route::get('/', 'index')->middleware('auth')->name('home');
+	Route::get('/tasks/{task}', 'show')->can('perform-task-operations', 'task')->name('tasks.show');
+	Route::delete('/tasks/{task}', 'destroy')->can('perform-task-operations', 'task')->name('tasks.destroy');
+	Route::delete('/overdue-tasks', 'destroyOverdueTasks')->middleware('auth')->name('tasks.destroy_overdue_tasks');
 });
 
 Route::view('/login', 'login')->middleware('guest')->name('login');
