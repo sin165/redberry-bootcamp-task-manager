@@ -10,7 +10,9 @@ class LanguageController extends Controller
 	public function switch(Request $request): RedirectResponse
 	{
 		$language = $request->input('language');
-		session(['language' => $language]);
+		if (in_array($language, config('app.locales'))) {
+			session(['language' => $language]);
+		}
 		return redirect()->back();
 	}
 }
