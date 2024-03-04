@@ -6,7 +6,7 @@
             {{ __('tasks.your_tasks') }}
         </h1>
         <div class="flex gap-4">
-            <form method="POST" action="{{ route('tasks.destroy_old') }}">
+            <form method="POST" action="{{ route('tasks.destroy_overdue_tasks') }}">
                 @csrf
                 @method('DELETE')
                 <button class="font-bold leading-4 px-6 py-4 rounded-1.5xl border border-blue-primary text-blue-primary hover:bg-blue-transparent">

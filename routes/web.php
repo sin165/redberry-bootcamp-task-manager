@@ -9,7 +9,7 @@ Route::controller(TaskController::class)->group(function () {
 	Route::get('/', 'index')->middleware('auth')->name('home');
 	Route::get('/tasks/{task}', 'show')->can('perform-task-operations', 'task')->name('tasks.show');
 	Route::delete('/tasks/{task}', 'destroy')->can('perform-task-operations', 'task')->name('tasks.destroy');
-	Route::delete('/delete-old-tasks', 'destroyOld')->middleware('auth')->name('tasks.destroy_old');
+	Route::delete('/overdue-tasks', 'destroyOverdueTasks')->middleware('auth')->name('tasks.destroy_overdue_tasks');
 });
 
 Route::view('/login', 'login')->middleware('guest')->name('login');

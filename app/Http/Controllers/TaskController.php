@@ -37,7 +37,7 @@ class TaskController extends Controller
 		return back();
 	}
 
-	public function destroyOld(): RedirectResponse
+	public function destroyOverdueTasks(): RedirectResponse
 	{
 		request()->user()->tasks()->where('due_date', '<', now())->delete();
 		return back();
