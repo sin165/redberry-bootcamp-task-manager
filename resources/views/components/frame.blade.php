@@ -9,5 +9,7 @@
             </main>
         </div>
     </div>
-    <x-language />
+    <div class="fixed bottom-10 right-10">
+        <x-language />
+    </div>
 </x-layout>

@@ -6,21 +6,20 @@
             </div>
             <main class="w-1/2 flex justify-center items-center relative">
                 <section class="w-116 h-92.5 relative">
-                    <h1 class="text-4xl leading-4 text-gray-720">Welcome Back!</h1>
-                    <p class="leading-4 mt-4 text-gray-510 ">Please enter your details</p>
+                    <h1 class="{{ app()->getLocale() === 'ka' ? 'text-xl' : 'text-3.5xl' }} font-bold leading-4 text-gray-720">{{ __('general.welcome') }}</h1>
+                    <p class="leading-4 mt-4 text-gray-510 ">{{ __('general.enter_details') }}</p>
                     <div class="absolute right-4 top-[-0.35rem]">
                         <x-svg.smiley />
                     </div>
                     <form method="POST" action="/login" class="flex flex-col gap-6 absolute bottom-0 w-full">
                         @csrf
-                        <x-form.input name="email" label="E-mail" placeholder="Write your email" required />
-                        <x-form.input name="password" label="Password" placeholder="Write your password" type="password" required />
-                        <x-form.button>LOG IN</x-form.button>
+                        <x-form.input name="email" label="{{ __('forms.email') }}" placeholder="{{ __('forms.email_placeholder') }}" required />
+                        <x-form.input name="password" label="{{ __('forms.password') }}" placeholder="{{ __('forms.password_placeholder') }}" type="password" required />
+                        <x-form.button>{{ __('forms.login') }}</x-form.button>
                     </form>
                 </section>
                 <section class="absolute bottom-0">
-                    <button class="h-10 px-4 py-3 text-sm leading-4 rounded-0.5xl text-gray-720 bg-gray-70" disabled>English</button>
-                    <button class="h-10 px-4 py-3 text-sm leading-4 text-gray-510 ">ქართული</button>
+                    <x-language />
                 </section>
             </main>
         </div>
