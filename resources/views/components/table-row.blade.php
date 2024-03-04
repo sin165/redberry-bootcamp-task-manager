@@ -21,7 +21,7 @@
         <div class="flex gap-7 text-gray-720">
             <a href="#" class="underline">{{ __('tasks.delete') }}</a>
             <a href="#" class="underline">{{ __('tasks.edit') }}</a>
-            <a href="#" class="underline">{{ __('tasks.show') }}</a>
+            <a href="{{ route('tasks.show', ['task' => $task->id]) }}" class="underline">{{ __('tasks.show') }}</a>
         </div>
     </td>
 </tr>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\View\View;
+use App\Models\Task;
 
 class TaskController extends Controller
 {
@@ -19,6 +20,13 @@ class TaskController extends Controller
 
 		return view('tasks.index', [
 			'tasks' => $tasks->paginate(8)->withQueryString(),
+		]);
+	}
+
+	public function show(Task $task)
+	{
+		return view('tasks.show', [
+			'task' => $task,
 		]);
 	}
 }
