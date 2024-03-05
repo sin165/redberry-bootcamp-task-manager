@@ -24,4 +24,7 @@
     @error($name)
         <p class="text-red-error text-xs mt-2">{{ $message }}</p>
     @enderror
+    @pushOnce('scripts')
+        @vite(['resources/js/date.js'])
+    @endpushOnce
 </fieldset>
