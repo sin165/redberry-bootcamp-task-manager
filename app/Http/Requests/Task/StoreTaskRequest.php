@@ -13,7 +13,7 @@ class StoreTaskRequest extends FormRequest
 			'name_ka'        => ['required', 'min:3', 'regex:/^[ა-ჰ0-9\p{P}\s]+$/'],
 			'description_en' => ['required', 'min:3', 'regex:/^[a-zA-Z0-9\p{P}\s\n]+$/'],
 			'description_ka' => ['required', 'min:3', 'regex:/^[ა-ჰ0-9\p{P}\s\n]+$/'],
-			'due_date'       => 'required',
+			'due_date'       => ['required', 'date_format:Y-m-d'],
 		];
 	}
 }

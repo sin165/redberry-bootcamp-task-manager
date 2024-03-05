@@ -46,7 +46,7 @@ class TaskController extends Controller
 				'en' => $attributes['description_en'],
 				'ka' => $attributes['description_ka'],
 			],
-			'due_date' => Carbon::createFromFormat('d/m/y', $attributes['due_date'])->startOfDay(),
+			'due_date' => Carbon::createFromFormat('Y-m-d', $attributes['due_date'])->startOfDay(),
 		]);
 		return redirect()->route('home');
 	}

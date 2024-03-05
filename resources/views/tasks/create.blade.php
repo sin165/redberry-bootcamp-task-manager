@@ -10,7 +10,7 @@
                 <x-form.input name="name_ka" label="{{ __('forms.name_ka') }}" placeholder="{{ __('forms.name_ka_placeholder') }}" required />
                 <x-form.textarea name="description_en" label="{{ __('forms.description_en') }}" placeholder="{{ __('forms.description_en_placeholder') }}" required />
                 <x-form.textarea name="description_ka" label="{{ __('forms.description_ka') }}" placeholder="{{ __('forms.description_ka_placeholder') }}" required />
-                <x-form.input name="due_date" label="{{ __('forms.due_date') }}" placeholder="DD/MM/YY" required />
+                <x-form.date-input name="due_date" label="{{ __('forms.due_date') }}" required  />
                 <x-form.button>{{ __('tasks.create_task') }}</x-form.button>
             </form>
         </div>
