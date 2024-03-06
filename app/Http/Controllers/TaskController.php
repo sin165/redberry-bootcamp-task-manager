@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
@@ -46,7 +45,7 @@ class TaskController extends Controller
 				'en' => $attributes['description_en'],
 				'ka' => $attributes['description_ka'],
 			],
-			'due_date' => Carbon::createFromFormat('Y-m-d', $attributes['due_date'])->startOfDay(),
+			'due_date' => $attributes['due_date'],
 		]);
 		return redirect()->route('home');
 	}
