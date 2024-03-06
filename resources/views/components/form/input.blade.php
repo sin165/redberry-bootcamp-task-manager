@@ -1,4 +1,4 @@
-@props(['name', 'label'])
+@props(['name', 'label', 'existingData' => null])
 
 @php
     $key = str_ends_with($name, ']') ? str_replace(['[', ']'], ['.', ''], $name) : $name;
@@ -13,7 +13,7 @@
             <input
                 class="leading-4 text-gray-720 bg-gray-70 mt-2 h-auto placeholder-shown:h-0 placeholder-shown:mt-0 focus:mt-2 focus:h-auto focus:outline-none"
                 name="{{ $name }}"
-                value="{{ old($key) }}"
+                value="{{ old($key, $existingData) }}"
                 {{ $attributes }}
             >
         </div>

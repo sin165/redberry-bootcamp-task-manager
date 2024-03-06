@@ -1,4 +1,4 @@
-@props(['name', 'label'])
+@props(['name', 'label', 'existingData' => null])
 
 <fieldset>
     <label id="date-label" class="h-17.5 bg-gray-70 rounded-1.5xl flex items-center gap-3 px-6 py-4 border {{ $errors->has($name) ? 'border-red-error' : 'border-transparent focus-within:border-blue-primary' }} group">
@@ -15,7 +15,7 @@
                 id="date-input"
                 class="size-0"
                 name="{{ $name }}"
-                value="{{ old($name) }}"
+                value="{{ old($name, $existingData) }}"
                 type="date"
                 {{ $attributes }}
             >

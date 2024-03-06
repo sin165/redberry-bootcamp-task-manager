@@ -33,3 +33,5 @@ fakeDateInput.oninput = e => {
 fakeDateInput.onchange = () => {
     realToFakeDate(dateInput.value);
 };
+
+realToFakeDate(dateInput.value);

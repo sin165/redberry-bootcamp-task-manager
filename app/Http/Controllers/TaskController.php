@@ -7,6 +7,7 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
 use App\Models\Task;
 use App\Http\Requests\Task\StoreTaskRequest;
+use App\Http\Requests\Task\UpdateTaskRequest;
 
 class TaskController extends Controller
 {
@@ -36,6 +37,19 @@ class TaskController extends Controller
 	{
 		Task::create($request->validated() + ['user_id' => auth()->id()]);
 		return redirect()->route('home');
+	}
+
+	public function edit(Task $task): View
+	{
+		return view('tasks.edit', [
+			'task' => $task,
+		]);
+	}
+
+	public function update(Task $task, UpdateTaskRequest $request): RedirectResponse
+	{
+		$task->update($request->validated());
+		return redirect()->route('tasks.show', $task->id);
 	}
 
 	public function destroy(Task $task): RedirectResponse

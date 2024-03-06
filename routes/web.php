@@ -10,6 +10,8 @@ Route::controller(TaskController::class)->group(function () {
 	Route::get('/', 'index')->middleware('auth')->name('home');
 	Route::post('/tasks', 'store')->middleware('auth')->name('tasks.store');
 	Route::get('/tasks/{task}', 'show')->can('perform-task-operations', 'task')->name('tasks.show');
+	Route::get('/tasks/{task}/edit', 'edit')->can('perform-task-operations', 'task')->name('tasks.edit');
+	Route::patch('/tasks/{task}', 'update')->can('perform-task-operations', 'task')->name('tasks.update');
 	Route::delete('/tasks/{task}', 'destroy')->can('perform-task-operations', 'task')->name('tasks.destroy');
 	Route::delete('/overdue-tasks', 'destroyOverdueTasks')->middleware('auth')->name('tasks.destroy_overdue_tasks');
 });
