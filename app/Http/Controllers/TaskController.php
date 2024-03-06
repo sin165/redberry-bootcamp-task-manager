@@ -34,7 +34,7 @@ class TaskController extends Controller
 
 	public function store(StoreTaskRequest $request): RedirectResponse
 	{
-		Task::create($request->all());
+		Task::create($request->validated() + ['user_id' => auth()->id()]);
 		return redirect()->route('home');
 	}
 

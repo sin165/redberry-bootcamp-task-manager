@@ -6,10 +6,10 @@
             </h1>
             <form class="flex flex-col gap-6" method="POST" action="{{ route('tasks.store') }}">
                 @csrf
-                <x-form.input name="name_en" label="{{ __('forms.name_en') }}" placeholder="{{ __('forms.name_en_placeholder') }}" required />
-                <x-form.input name="name_ka" label="{{ __('forms.name_ka') }}" placeholder="{{ __('forms.name_ka_placeholder') }}" required />
-                <x-form.textarea name="description_en" label="{{ __('forms.description_en') }}" placeholder="{{ __('forms.description_en_placeholder') }}" required />
-                <x-form.textarea name="description_ka" label="{{ __('forms.description_ka') }}" placeholder="{{ __('forms.description_ka_placeholder') }}" required />
+                <x-form.input name="name[en]" label="{{ __('forms.name_en') }}" placeholder="{{ __('forms.name_en_placeholder') }}" required />
+                <x-form.input name="name[ka]" label="{{ __('forms.name_ka') }}" placeholder="{{ __('forms.name_ka_placeholder') }}" required />
+                <x-form.textarea name="description[en]" label="{{ __('forms.description_en') }}" placeholder="{{ __('forms.description_en_placeholder') }}" required />
+                <x-form.textarea name="description[ka]" label="{{ __('forms.description_ka') }}" placeholder="{{ __('forms.description_ka_placeholder') }}" required />
                 <x-form.date-input name="due_date" label="{{ __('forms.due_date') }}" required  />
                 <x-form.button>{{ __('tasks.create_task') }}</x-form.button>
             </form>
