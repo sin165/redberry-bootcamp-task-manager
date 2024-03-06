@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Task Manager</title>
         @vite('resources/css/app.css')
+        @stack('scripts')
     </head>
     <body class="font-helvetica">
         {{ $slot }}

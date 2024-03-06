@@ -13,7 +13,7 @@
                     {{ __('tasks.delete_old_tasks') }}
                 </button>
             </form>
-            <a href="#" class="rounded-1.5xl bg-blue-primary hover:bg-blue-darker flex gap-2 items-center px-6 text-white">
+            <a href="{{ route('tasks.create') }}" class="rounded-1.5xl bg-blue-primary hover:bg-blue-darker flex gap-2 items-center px-6 text-white">
                 <x-svg.plus-circle />
                 {{ __('tasks.add_task') }}
             </a>

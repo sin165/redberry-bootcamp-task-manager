@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
 use App\Models\Task;
+use App\Http\Requests\Task\StoreTaskRequest;
 
 class TaskController extends Controller
 {
@@ -29,6 +30,12 @@ class TaskController extends Controller
 		return view('tasks.show', [
 			'task' => $task,
 		]);
+	}
+
+	public function store(StoreTaskRequest $request): RedirectResponse
+	{
+		Task::create($request->validated() + ['user_id' => auth()->id()]);
+		return redirect()->route('home');
 	}
 
 	public function destroy(Task $task): RedirectResponse
