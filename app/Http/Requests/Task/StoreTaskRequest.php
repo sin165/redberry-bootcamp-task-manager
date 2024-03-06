@@ -3,7 +3,6 @@
 namespace App\Http\Requests\Task;
 
 use Illuminate\Foundation\Http\FormRequest;
-use Carbon\Carbon;
 use App\Rules\English;
 use App\Rules\Georgian;
 
@@ -24,6 +23,18 @@ class StoreTaskRequest extends FormRequest
 
 	protected function passedValidation(): void
 	{
-		$this->replace(['due_date' => Carbon::createFromFormat('Y-m-d', $this->due_date)->startOfDay()]);
+		$data = $this->validated();
+		$this->replace([
+			'user_id' => auth()->id(),
+			'name'    => [
+				'en' => $data['name_en'],
+				'ka' => $data['name_ka'],
+			],
+			'description' => [
+				'en' => $data['description_en'],
+				'ka' => $data['description_ka'],
+			],
+			'due_date' => $data['due_date'],
+		]);
 	}
 }
