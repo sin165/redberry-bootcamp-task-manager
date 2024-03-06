@@ -3,16 +3,20 @@
 namespace App\Http\Requests\Task;
 
 use Illuminate\Foundation\Http\FormRequest;
+use App\Rules\English;
+use App\Rules\Georgian;
 
 class StoreTaskRequest extends FormRequest
 {
 	public function rules(): array
 	{
+		$english = new English;
+		$georgian = new Georgian;
 		return [
-			'name_en'        => ['required', 'min:3', 'regex:/^[a-zA-Z0-9\p{P}\s]+$/'],
-			'name_ka'        => ['required', 'min:3', 'regex:/^[ა-ჰ0-9\p{P}\s]+$/'],
-			'description_en' => ['required', 'min:3', 'regex:/^[a-zA-Z0-9\p{P}\s\n]+$/'],
-			'description_ka' => ['required', 'min:3', 'regex:/^[ა-ჰ0-9\p{P}\s\n]+$/'],
+			'name_en'        => ['required', 'min:3', $english],
+			'name_ka'        => ['required', 'min:3', $georgian],
+			'description_en' => ['required', 'min:3', $english],
+			'description_ka' => ['required', 'min:3', $georgian],
 			'due_date'       => ['required', 'date_format:Y-m-d'],
 		];
 	}

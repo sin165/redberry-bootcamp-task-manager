@@ -174,6 +174,9 @@ return [
 		],
 	],
 
+	'english'  => 'English letters only',
+	'georgian' => 'Georgian letters only',
+
 	/*
 	|--------------------------------------------------------------------------
 	| Custom Validation Attributes
