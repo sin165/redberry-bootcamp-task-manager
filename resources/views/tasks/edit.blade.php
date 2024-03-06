@@ -16,7 +16,7 @@
                 <x-form.textarea name="description[en]" label="{{ __('forms.description_en') }}" placeholder="{{ __('forms.description_en_placeholder') }}" required existingData="{{ $task->getTranslation('description', 'en') }}" />
                 <x-form.textarea name="description[ka]" label="{{ __('forms.description_ka') }}" placeholder="{{ __('forms.description_ka_placeholder') }}" required existingData="{{ $task->getTranslation('description', 'ka') }}" />
                 <x-form.date-input name="due_date" label="{{ __('forms.due_date') }}" required  existingData="{{ $task->due_date->format('Y-m-d') }}" />
-                <x-form.button>{{ __('tasks.create_task') }}</x-form.button>
+                <x-form.button>{{ __('tasks.edit_changes') }}</x-form.button>
             </form>
         </div>
     </div>

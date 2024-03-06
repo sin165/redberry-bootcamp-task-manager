@@ -6,6 +6,7 @@ return [
 	'add_task'         => 'ADD TASK',
 	'create_task'      => 'CREATE TASK',
 	'edit_task'        => 'EDIT TASK',
+	'edit_changes'     => 'EDIT CHANGES',
 	'task_name'        => 'Task name',
 	'description'      => 'Description',
 	'created_date'     => 'Created Date',

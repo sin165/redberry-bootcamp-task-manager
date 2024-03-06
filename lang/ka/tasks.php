@@ -6,6 +6,7 @@ return [
 	'add_task'         => 'დავალების დამატება',
 	'create_task'      => 'დავალების შექმნა',
 	'edit_task'        => 'ჩასწორება',
+	'edit_changes'     => 'ჩასწორება',
 	'task_name'        => 'სახელი',
 	'description'      => 'აღწერა',
 	'created_date'     => 'შექმნის თარიღი',
