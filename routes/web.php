@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LanguageController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SessionsController;
 use App\Http\Controllers\TaskController;
 
@@ -23,5 +24,6 @@ Route::controller(SessionsController::class)->group(function () {
 });
 
 Route::view('/profile', 'profile')->middleware('auth')->name('profile');
+Route::patch('/profile', [ProfileController::class, 'update'])->middleware('auth')->name('profile.update');
 
 Route::post('/language-switch', [LanguageController::class, 'switch'])->name('language.switch');
