@@ -24,7 +24,7 @@
                 @method('DELETE')
                 <button class="underline">{{ __('tasks.delete') }}</button>
             </form>
-            <a href="#" class="underline">{{ __('tasks.edit') }}</a>
+            <a href="{{ route('tasks.edit', ['task' => $task->id]) }}" class="underline">{{ __('tasks.edit') }}</a>
             <a href="{{ route('tasks.show', ['task' => $task->id]) }}" class="underline">{{ __('tasks.show') }}</a>
         </div>
     </td>

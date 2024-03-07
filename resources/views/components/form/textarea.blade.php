@@ -1,4 +1,4 @@
-@props(['name', 'label'])
+@props(['name', 'label', 'existingData' => null])
 
 @php
     $key = str_ends_with($name, ']') ? str_replace(['[', ']'], ['.', ''], $name) : $name;
@@ -15,7 +15,7 @@
                 name="{{ $name }}"
                 rows="4"
                 {{ $attributes }}
-            >{{ old($key) }}</textarea>
+            >{{ old($key, $existingData) }}</textarea>
         </div>
         @if ($name === 'password')
             <div class="group-has-[:placeholder-shown]:hidden group-has-[:focus-within]:block group-has-[:focus-within:placeholder-shown]:block">

@@ -7,7 +7,7 @@
         </h1>
         <a
             class="font-bold leading-4 rounded-1.5xl flex gap-2 items-center px-6 py-3 border border-blue-primary text-blue-primary hover:bg-blue-transparent"
-            href="#"
+            href="{{ route('tasks.edit', ['task' => $task->id]) }}"
         >
             <x-svg.edit />
             <span class="w-max">{{ __('tasks.edit_task') }}</span>
