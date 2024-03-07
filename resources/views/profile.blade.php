@@ -1,3 +1,5 @@
+@props(['cover'])
+
 <x-frame>
     <div class="relative pr-10 pt-16">
         <div class="w-2/5 min-w-80 mx-auto -translate-x-5 mt-6">
@@ -56,9 +58,9 @@
                 <fieldset class="flex items-center gap-5 mt-1.5 mb-11">
                     <img
                         id="cover"
-                        src="{{ asset('images/default_cover.png') }}"
+                        src="{{ asset($cover) }}"
                         alt="profile picture"
-                        class="size-14 md:size-32 shrink-0 block"
+                        class="size-14 md:size-32 shrink-0 block object-cover"
                     >
                     <label class="font-bold leading-4 rounded-1.5xl flex gap-2 items-center px-12 py-4 border border-blue-primary text-blue-primary hover:bg-blue-transparent cursor-pointer">
                         <x-svg.upload />
