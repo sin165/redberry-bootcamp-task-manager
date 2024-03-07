@@ -26,6 +26,9 @@ class ProfileController extends Controller
 			$user->password = $attributes['new_password'];
 		}
 		if ($attributes['profile_picture'] ?? null) {
+			if ($user->profile_picture) {
+				Storage::delete($user->profile_picture);
+			}
 			$path = $attributes['profile_picture']->store('profile_pictures');
 			$user->profile_picture = $path;
 		}
