@@ -1,6 +1,10 @@
 <aside class="left-0 bg-gray-70 h-full w-max min-w-44 p-6 pb-9 rounded-1.5xl flex flex-col justify-between flex-shrink-0">
     <div>
-        <img src="{{ asset('images/default_profile_picture.jpg') }}" alt="profile picture" class="size-16 rounded-full block mx-auto">
+        <img
+            src="{{ auth()->user()->profile_picture ? asset('storage/' . auth()->user()->profile_picture) : asset('images/default_profile_picture.jpg') }}"
+            alt="profile picture"
+            class="size-16 rounded-full block mx-auto"
+        >
         <nav class="flex flex-col gap-7 pt-28">
             <x-sidebar-link href="{{ route('home') }}">
                 <x-slot name="svg"><x-svg.my-tasks /></x-slot>

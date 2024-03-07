@@ -35,7 +35,11 @@
                     {{ __('general.change_photos') }}
                 </h3>
                 <fieldset class="flex items-center gap-5">
-                    <img src="{{ asset('images/default_profile_picture.jpg') }}" alt="profile picture" class="size-14 md:size-32 rounded-full shrink-0 block">
+                    <img
+                        src="{{ auth()->user()->profile_picture ? asset('storage/' . auth()->user()->profile_picture) : asset('images/default_profile_picture.jpg') }}"
+                        alt="profile picture"
+                        class="size-14 md:size-32 rounded-full shrink-0 block"
+                    >
                     <label class="font-bold leading-4 rounded-1.5xl flex gap-2 items-center px-12 py-4 border border-blue-primary text-blue-primary hover:bg-blue-transparent">
                         <x-svg.upload />
                         <span class="w-max">{{ __('forms.upload_profile') }}</span>
