@@ -22,4 +22,6 @@ Route::controller(SessionsController::class)->group(function () {
 	Route::post('/logout', 'destroy')->middleware('auth')->name('sessions.destroy');
 });
 
+Route::view('/profile', 'profile')->middleware('auth')->name('profile');
+
 Route::post('/language-switch', [LanguageController::class, 'switch'])->name('language.switch');

@@ -10,7 +10,7 @@
                 <x-slot name="svg"><x-svg.due-tasks /></x-slot>
                 {{ __('sidebar.due_tasks') }}
             </x-sidebar-link>
-            <x-sidebar-link href="#">
+            <x-sidebar-link href="{{ route('profile') }}">
                 <x-slot name="svg"><x-svg.profile /></x-slot>
                 {{ __('sidebar.profile') }}
             </x-sidebar-link>
