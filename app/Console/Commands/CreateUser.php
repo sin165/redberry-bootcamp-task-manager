@@ -7,15 +7,19 @@ use Illuminate\Console\Command;
 
 class CreateUser extends Command
 {
-	protected $signature = 'user:create {email} {password}';
+	protected $signature = 'user:create';
 
-	protected $description = 'Create a new user with a given email and password';
+	protected $description = 'Create a new user';
 
 	public function handle()
 	{
-		$email = $this->argument('email');
-		$password = $this->argument('password');
+		$email = $this->ask('Enter email');
+		if (User::where('email', $email)->exists()) {
+			$this->error('Email already exists. Please choose a different email.');
+			return;
+		}
 
+		$password = $this->secret('Enter password');
 		if (strlen($password) < 4) {
 			$this->error('Password must be at least 4 characters long.');
 			return;
