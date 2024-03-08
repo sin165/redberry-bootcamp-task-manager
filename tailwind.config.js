@@ -34,6 +34,7 @@ export default {
         'blue-transparent': '#499AF914',
         'blue-darker': '#3386E7',
         'red-error': '#E91818',
+        'green-success': '#4ABF4E',
         'gray-70': '#F6F8FA',
         'gray-220': '#E0E3E7',
         'gray-420': '#959DA5',
@@ -41,6 +42,9 @@ export default {
         'gray-550': '#586069',
         'gray-720': '#2F363D',
       },
+      boxShadow: {
+        'message-box': '0 4px 4px 0 #0000000F',
+      }
     },
   },
   plugins: [],

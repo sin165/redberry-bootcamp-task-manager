@@ -9,5 +9,8 @@
     </head>
     <body class="font-helvetica">
         {{ $slot }}
+        @if (session()->has('success'))
+            <x-success>{{ session('success') }}</x-success>
+        @endif
     </body>
 </html>

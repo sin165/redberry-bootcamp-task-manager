@@ -10,6 +10,7 @@ export default defineConfig({
                 'resources/js/date.js',
                 'resources/js/image-input.js',
                 'resources/js/password.js',
+                'resources/js/flash-message.js',
             ],
             refresh: true,
         }),
