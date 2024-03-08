@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LanguageController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SessionsController;
 use App\Http\Controllers\TaskController;
 
@@ -16,10 +17,13 @@ Route::controller(TaskController::class)->group(function () {
 	Route::delete('/overdue-tasks', 'destroyOverdueTasks')->middleware('auth')->name('tasks.destroy_overdue_tasks');
 });
 
-Route::view('/login', 'login')->middleware('guest')->name('login');
 Route::controller(SessionsController::class)->group(function () {
+	Route::get('/login', 'create')->middleware('guest')->name('login');
 	Route::post('/login', 'store')->middleware('guest')->name('sessions.store');
 	Route::post('/logout', 'destroy')->middleware('auth')->name('sessions.destroy');
 });
+
+Route::get('/profile', [ProfileController::class, 'show'])->middleware('auth')->name('profile');
+Route::patch('/profile', [ProfileController::class, 'update'])->middleware('auth')->name('profile.update');
 
 Route::post('/language-switch', [LanguageController::class, 'switch'])->name('language.switch');
