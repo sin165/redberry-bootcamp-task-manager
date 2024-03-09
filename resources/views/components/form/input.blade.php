@@ -18,10 +18,14 @@
             >
         </div>
         @if (str_ends_with($name, 'password'))
-            <div class="group-has-[:placeholder-shown]:hidden group-has-[:focus-within]:block group-has-[:focus-within:placeholder-shown]:block">
-                <x-svg.eye-off />
+            <div class="group-has-[:placeholder-shown]:hidden group-has-[:focus-within]:block group-has-[:focus-within:placeholder-shown]:block group-has-[:placeholder-shown:active]:block">
+                <div class="eye hidden"><x-svg.eye /></div>
+                <div class="eye-off"><x-svg.eye-off /></div>
             </div>
         @endif
+        @pushOnce('scripts')
+            @vite(['resources/js/password.js'])
+        @endpushOnce
     </label>
     @error($key)
         <p class="text-red-error text-xs mt-2">{{ $message }}</p>

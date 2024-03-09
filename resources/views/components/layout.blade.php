@@ -5,9 +5,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Task Manager</title>
         @vite('resources/css/app.css')
+        @vite(['resources/js/flash-message.js'])
         @stack('scripts')
     </head>
     <body class="font-helvetica">
         {{ $slot }}
+        @if (session()->has('success'))
+            <x-success>{{ session('success') }}</x-success>
+        @endif
     </body>
 </html>

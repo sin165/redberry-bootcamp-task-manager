@@ -40,6 +40,6 @@ class ProfileController extends Controller
 			$attributes['cover']->store('cover');
 		}
 		$user->save();
-		return back();
+		return back()->with('success', __('messages.profile_updated'));
 	}
 }

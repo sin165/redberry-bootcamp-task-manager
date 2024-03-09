@@ -26,7 +26,7 @@ class TaskController extends Controller
 		]);
 	}
 
-	public function show(Task $task)
+	public function show(Task $task): View
 	{
 		return view('tasks.show', [
 			'task' => $task,
@@ -36,7 +36,7 @@ class TaskController extends Controller
 	public function store(StoreTaskRequest $request): RedirectResponse
 	{
 		Task::create($request->validated() + ['user_id' => auth()->id()]);
-		return redirect()->route('home');
+		return redirect()->route('home')->with('success', __('messages.task_created'));
 	}
 
 	public function edit(Task $task): View
@@ -49,18 +49,18 @@ class TaskController extends Controller
 	public function update(Task $task, UpdateTaskRequest $request): RedirectResponse
 	{
 		$task->update($request->validated());
-		return redirect()->route('tasks.show', $task->id);
+		return redirect()->route('tasks.show', $task->id)->with('success', __('messages.task_updated'));
 	}
 
 	public function destroy(Task $task): RedirectResponse
 	{
 		$task->delete();
-		return back();
+		return back()->with('success', __('messages.task_deleted'));
 	}
 
 	public function destroyOverdueTasks(): RedirectResponse
 	{
 		request()->user()->tasks()->where('due_date', '<', now())->delete();
-		return back();
+		return back()->with('success', __('messages.tasks_deleted'));
 	}
 }
