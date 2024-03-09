@@ -2,7 +2,3 @@
     <x-svg.smile />
     {{ $slot }}
 </div>
-
-@pushOnce('scripts')
-    @vite(['resources/js/flash-message.js'])
-@endpushOnce
