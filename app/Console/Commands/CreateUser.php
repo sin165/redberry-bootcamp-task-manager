@@ -11,7 +11,7 @@ class CreateUser extends Command
 
 	protected $description = 'Create a new user';
 
-	public function handle()
+	public function handle(): void
 	{
 		$email = $this->ask('Enter email');
 		if (User::where('email', $email)->exists()) {
