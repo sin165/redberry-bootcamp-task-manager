@@ -14,6 +14,12 @@ class CreateUser extends Command
 	public function handle(): void
 	{
 		$email = $this->ask('Enter email');
+
+		if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+			$this->error('Invalid email format. Please enter a valid email address.');
+			return;
+		}
+
 		if (User::where('email', $email)->exists()) {
 			$this->error('Email already exists. Please choose a different email.');
 			return;
