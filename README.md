@@ -15,10 +15,10 @@ Task manager is a platform where you can manage your tasks. With this applicatio
 #
 ### Prerequisites
 
-* <img src="readme/assets/php.svg" width="35" style="position: relative; top: 4px" /> *PHP@8.1 and up*
-* <img src="readme/assets/composer.png" width="35" style="position: relative; top: 6px" /> *composer@2.2 and up*
-* <img src="readme/assets/mysql.png" width="35" style="position: relative; top: 4px" /> *MYSQL*
-* <img src="readme/assets/npm.png" width="35" style="position: relative; top: 4px" /> *npm*
+* *PHP@8.1 and up*
+* *Composer@2.2 and up*
+* *MySQL*
+* *npm*
 
 #
 ### Tech Stack
