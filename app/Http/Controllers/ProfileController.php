@@ -6,7 +6,6 @@ use Illuminate\View\View;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\RedirectResponse;
 use App\Http\Requests\UpdateProfileRequest;
-use App\Models\User;
 
 class ProfileController extends Controller
 {
@@ -20,7 +19,7 @@ class ProfileController extends Controller
 
 	public function update(UpdateProfileRequest $request): RedirectResponse
 	{
-		$user = User::find(auth()->id());
+		$user = auth()->user();
 		$attributes = $request->validated();
 		if ($attributes['new_password']) {
 			$user->password = $attributes['new_password'];
