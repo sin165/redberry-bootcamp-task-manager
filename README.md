@@ -17,8 +17,9 @@ Task manager is a platform where you can manage your tasks. With this applicatio
 
 * *PHP@8.1 and up*
 * *Composer@2.2 and up*
-* *MySQL*
-* *npm*
+* *MySQL@8 and up*
+* *node@18 and up*
+* *npm@10 and up*
 
 #
 ### Tech Stack
