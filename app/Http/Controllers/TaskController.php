@@ -16,7 +16,7 @@ class TaskController extends Controller
 		$tasks = request()->user()->tasks();
 
 		if ($request->has('due_tasks_only')) {
-			$tasks->where('due_date', '<', now());
+			$tasks->dueTasksOnly();
 		}
 
 		$tasks->orderByField($request->sort_by ?? 'created_at_desc');
