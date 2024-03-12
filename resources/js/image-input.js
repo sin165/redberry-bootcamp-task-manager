@@ -7,7 +7,7 @@ profilePictureInput.onchange = () => {
     const file = profilePictureInput.files[0];
     if(file) {
         profilePictureImg.src = URL.createObjectURL(file);
-        deleteProfilePictureButton.removeAttribute('disabled');
+        deleteProfilePictureButton.removeAttribute('hidden');
     }
 }
 
@@ -15,7 +15,7 @@ deleteProfilePictureButton.onclick = e => {
     e.preventDefault();
     profilePictureInput.value = null;
     profilePictureImg.src = existingProfilePictureSrc;
-    deleteProfilePictureButton.setAttribute('disabled', true);
+    deleteProfilePictureButton.setAttribute('hidden', true);
 }
 
 
@@ -29,12 +29,12 @@ coverInput.onchange = () => {
     if(file) {
         coverImg.src = URL.createObjectURL(file);
     }
-    deleteCoverButton.removeAttribute('disabled');
+    deleteCoverButton.removeAttribute('hidden');
 }
 
 deleteCoverButton.onclick = e => {
     e.preventDefault();
     coverInput.value = null;
     coverImg.src = existingCoverSrc;
-    deleteCoverButton.setAttribute('disabled', true);
+    deleteCoverButton.setAttribute('hidden', true);
 }

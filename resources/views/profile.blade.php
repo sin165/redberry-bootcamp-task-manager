@@ -48,7 +48,7 @@
                         <span class="w-max">{{ __('forms.upload_profile') }}</span>
                         <input id="profile-picture-input" name="profile_picture" type="file" class="hidden">
                     </label>
-                    <button id="delete-profile-picture" class="font-bold text-gray-720 disabled:text-gray-550" disabled>
+                    <button id="delete-profile-picture" class="font-bold text-gray-720" hidden>
                         {{ __('forms.delete') }}
                     </button>
                 </fieldset>
@@ -67,7 +67,7 @@
                         <span class="w-max">{{ __('forms.upload_cover') }}</span>
                         <input id="cover-input" name="cover" type="file" class="hidden">
                     </label>
-                    <button id="delete-cover" class="font-bold text-gray-720 disabled:text-gray-550" disabled>
+                    <button id="delete-cover" class="font-bold text-gray-720" hidden>
                         {{ __('forms.delete') }}
                     </button>
                 </fieldset>
