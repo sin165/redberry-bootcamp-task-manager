@@ -27,6 +27,11 @@ class Task extends Model
 		return $this->belongsTo(User::class);
 	}
 
+	public function scopeDueTasksOnly(Builder $query): Builder
+	{
+		return $query->where('due_date', '<', now());
+	}
+
 	public function scopeOrderByField(Builder $query, string $field): Builder
 	{
 		$direction = 'asc';

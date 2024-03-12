@@ -13,10 +13,10 @@ class TaskController extends Controller
 {
 	public function index(Request $request): View
 	{
-		$tasks = request()->user()->tasks();
+		$tasks = auth()->user()->tasks();
 
 		if ($request->has('due_tasks_only')) {
-			$tasks->where('due_date', '<', now());
+			$tasks->dueTasksOnly();
 		}
 
 		$tasks->orderByField($request->sort_by ?? 'created_at_desc');
@@ -46,7 +46,7 @@ class TaskController extends Controller
 		]);
 	}
 
-	public function update(Task $task, UpdateTaskRequest $request): RedirectResponse
+	public function update(UpdateTaskRequest $request, Task $task): RedirectResponse
 	{
 		$task->update($request->validated());
 		return redirect()->route('tasks.show', $task->id)->with('success', __('messages.task_updated'));
@@ -60,7 +60,7 @@ class TaskController extends Controller
 
 	public function destroyOverdueTasks(): RedirectResponse
 	{
-		request()->user()->tasks()->where('due_date', '<', now())->delete();
+		auth()->user()->tasks()->where('due_date', '<', now())->delete();
 		return back()->with('success', __('messages.tasks_deleted'));
 	}
 }
